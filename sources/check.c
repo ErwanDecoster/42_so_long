@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 16:39:55 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 13:54:08 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:28 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 //La carte doit être fermée par des murs sur chacun de ses côtés.
 int	check_enclosure(char *map)

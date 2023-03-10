@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:33:01 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 12:07:58 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:33 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	move_check(t_game *game, char direction)
 {

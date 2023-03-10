@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:52:10 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/08 16:22:18 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:38 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	put_image(t_game game, char c, int x, int y)
 {

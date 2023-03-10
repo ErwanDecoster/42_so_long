@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:24:53 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 13:55:44 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:35 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	get_map_size(t_game *game, char *filename)
 {

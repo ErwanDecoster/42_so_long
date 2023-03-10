@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:25:59 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 12:01:20 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:41 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	close_program(t_game *game)
 {

@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:30:03 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 11:19:12 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:30 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	open_imgs(void *mlx, t_game *game)
 {

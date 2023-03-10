@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:38:22 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/08 15:04:44 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:43 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 // conte le nombre d'ocurence d'un caractere.
 int	nb_occurrence(char *str, char c)

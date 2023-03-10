@@ -6,11 +6,11 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:59:30 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/09 13:42:09 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:54:19 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 char	*spread(char *mapcpy, int pos, int *nb_to_find)
 {

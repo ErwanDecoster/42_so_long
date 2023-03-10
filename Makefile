@@ -6,7 +6,7 @@
 #    By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 13:51:30 by edecoste          #+#    #+#              #
-#    Updated: 2023/03/10 11:21:45 by edecoste         ###   ########.fr        #
+#    Updated: 2023/03/10 15:01:51 by edecoste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,8 +41,8 @@ all: 			${NAME}
 
 ${NAME}:		${OBJS} ${LIBFT} ${MLX}
 				${CC} $^ ${FLAGS} ${MLXFLAGS} -o ${NAME}
-			
-./build/%.o:	%.c ${HEADER}
+
+./build/%.o:	./sources/%.c ${HEADER}
 				@mkdir -p build
 				${CC} ${FLAGS} -Imlx_linux -c $< -o $@
 
