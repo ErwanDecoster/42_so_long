@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:25:59 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 14:54:41 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:55:46 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@ int	close_program(t_game *game)
 		free(game->map);
 		close_img(game);
 		close_img_wall(game);
-		mlx_destroy_display(game->mlx);
 		mlx_destroy_window(game->mlx, game->mlx_win);
+		if (game->mlx)
+			mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
 	exit(0);

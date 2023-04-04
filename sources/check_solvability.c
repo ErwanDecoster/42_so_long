@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:59:30 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 14:54:19 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:37:44 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ char	*spread(char *mapcpy, int pos, int *nb_to_find)
 		*nb_to_find = *nb_to_find - 1;
 	if (mapcpy[pos] == 'C' || mapcpy[pos] == 'E' || mapcpy[pos] == '0')
 		mapcpy[pos] = '1';
-	temp_i = get_index(pos, mapcpy, 't');
+	temp_i = get_ind(pos, mapcpy, 't');
 	if (temp_i != -1 && mapcpy[temp_i] != '1')
 		spread(mapcpy, temp_i, nb_to_find);
-	temp_i = get_index(pos, mapcpy, 'b');
+	temp_i = get_ind(pos, mapcpy, 'b');
 	if (temp_i != -1 && mapcpy[temp_i] != '1')
 		spread(mapcpy, temp_i, nb_to_find);
-	temp_i = get_index(pos, mapcpy, 'l');
+	temp_i = get_ind(pos, mapcpy, 'l');
 	if (temp_i != -1 && mapcpy[temp_i] != '1')
 		spread(mapcpy, temp_i, nb_to_find);
-	temp_i = get_index(pos, mapcpy, 'r');
+	temp_i = get_ind(pos, mapcpy, 'r');
 	if (temp_i != -1 && mapcpy[temp_i] != '1')
 		spread(mapcpy, temp_i, nb_to_find);
 	return (mapcpy);

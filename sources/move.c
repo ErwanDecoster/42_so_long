@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:33:01 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 14:54:33 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:37:44 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	move_check(t_game *game, char direction)
 	int	y;
 
 	find_x_y(*game, game->player_pos, &x, &y);
-	temp_i = get_index(game->player_pos, game->map, direction);
+	temp_i = get_ind(game->player_pos, game->map, direction);
 	if (temp_i == -1)
 		return (-1);
 	if (game->map[temp_i] == '1')

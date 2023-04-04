@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:54:58 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 13:55:19 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:20:14 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # include <math.h>
 # include <stdio.h>
 
-typedef struct	s_assets
+typedef struct s_assets
 {
 	void	*bg_2_1;
 	void	*bg_2_2;
@@ -52,7 +52,7 @@ typedef struct	s_assets
 	void	*wall;
 }				t_assets;
 
-typedef struct	s_game {
+typedef struct s_game {
 	void		*mlx;
 	void		*mlx_win;
 	int			game_state;
@@ -83,7 +83,6 @@ int		open_imgs(void *mlx, t_game *game);
 int		close_img(t_game *g);
 int		close_img_wall(t_game *g);
 
-
 // ------------------------------------------------------------- maps_funct.c --
 
 int		get_map_size(t_game *game, char *filename);
@@ -110,7 +109,7 @@ void	check_event(t_game *game);
 
 int		nb_occurrence(char *str, char c);
 int		line_len(char *str);
-int		get_index(int pos, char *map, char directions);
+int		get_ind(int pos, char *map, char directions);
 int		find_index(char *map, char to_find);
 int		find_x_y(t_game game, int pos, int *x, int *y);
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: edecoste <edecoste@student.4move_checkmove_checklyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 13:51:30 by edecoste          #+#    #+#              #
-#    Updated: 2023/03/10 15:01:51 by edecoste         ###   ########.fr        #
+#    Updated: 2023/04/03 17:11:28 by edecoste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,10 @@ DIR_LIBFT		= Libft/
 LIBFT			= $(addprefix $(DIR_LIBFT), libft.a)
 
 OBJS 			= ${SRCS:%.c=./build/%.o}
+OBJS_BONUS		= ${SRCS:%.c=./build_bonus/%.o}
 
 HEADER			= includes/so_long.h
+BONUS_HEADER	= includes_bonus/so_long.h
 
 all: 			${NAME}
 
@@ -46,14 +48,22 @@ ${NAME}:		${OBJS} ${LIBFT} ${MLX}
 				@mkdir -p build
 				${CC} ${FLAGS} -Imlx_linux -c $< -o $@
 
+./build_bonus/%.o:	./sources_bonus/%.c ${BONUS_HEADER}
+					@mkdir -p build_bonus
+					${CC} ${FLAGS} -Imlx_linux -c $< -o $@
+
 ${MLX}:			FORCE
 				make -s -C ${DIR_MLX}
 
 ${LIBFT}:		FORCE
 				make -s -C ${DIR_LIBFT}
 
+bonus:			${OBJS_BONUS} ${LIBFT} ${MLX}
+				${CC} $^ ${FLAGS} ${MLXFLAGS} -o ${NAME}
+
 clean:
 				${RM} -r ./build
+				${RM} -r ./build_bonus
 
 fclean:			clean
 				${RM} ${NAME}

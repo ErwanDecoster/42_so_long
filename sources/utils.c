@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:38:22 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 14:54:43 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:37:44 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	line_len(char *str)
 	return (i);
 }
 
-int	get_index(int pos, char *map, char directions)
+int	get_ind(int pos, char *map, char directions)
 {
 	int	line_l;
 

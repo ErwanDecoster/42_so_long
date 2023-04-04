@@ -6,11 +6,24 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:30:03 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/10 14:54:30 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/03 17:30:27 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+int	check_img_opened(t_game *game)
+{
+	t_assets	*a;
+
+	a = &(game->assets);
+	if (!a->bg_2_1 || !a->bg_2_2 || !a->bg_1 || !a->chest_o || !a->chest || \
+		!a->wall || !a->exit || !a->player || !a->wall_bl || !a->wall_br || \
+		!a->wall_tl || !a->wall_tr || !a->wall_t || !a->wall_b || !a->wall_l \
+		|| !a->wall_r)
+		return (close_program(game));
+	return (0);
+}
 
 int	open_imgs(void *mlx, t_game *game)
 {
@@ -36,11 +49,7 @@ int	open_imgs(void *mlx, t_game *game)
 	a->wall_b = mlx_xpm_file_to_image(mlx, "./assets/wall_b.xpm", t, t);
 	a->wall_l = mlx_xpm_file_to_image(mlx, "./assets/wall_l.xpm", t, t);
 	a->wall_r = mlx_xpm_file_to_image(mlx, "./assets/wall_r.xpm", t, t);
-	if (!a->bg_2_1 || !a->bg_2_2 || !a->bg_1 || !a->chest_o || !a->chest || \
-		!a->wall || !a->exit || !a->player || !a->wall_bl || !a->wall_br || \
-		!a->wall_tl || !a->wall_tr || !a->wall_t || !a->wall_b || !a->wall_l \
-		|| !a->wall_r)
-		return (close_program(game));
+	check_img_opened(game);
 	return (0);
 }
 
