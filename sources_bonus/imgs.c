@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:30:03 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/03 17:32:59 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:01:59 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	close_img(t_game *g)
 		mlx_destroy_image(g->mlx, g->assets.exit);
 	if (g->assets.player)
 		mlx_destroy_image(g->mlx, g->assets.player);
+	if (g->assets.enemy)
+		mlx_destroy_image(g->mlx, g->assets.enemy);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:25:59 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/03 16:55:46 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:29:14 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	close_program(t_game *game)
 			mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
+	// free(game);
 	exit(0);
 	return (0);
 }
@@ -63,9 +64,7 @@ int	main(int argc, char **argv)
 	ft_memset(&game, 0, sizeof(t_game));
 	game.game_state = 0;
 	if (argc != 2)
-	{
 		return (close_program(&game), 1);
-	}
 	check_map(&game, argv[1]);
 	game.collect = nb_occurrence(game.map, 'C');
 	game.game_state = 3;

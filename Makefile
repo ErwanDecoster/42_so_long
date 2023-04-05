@@ -22,6 +22,7 @@ SRCS			=	so_long.c \
 					check.c \
 					check_solvability.c \
 					utils.c \
+					enemy_funct.c \
 					imgs.c \
 					maps_funct.c \
 					render.c \

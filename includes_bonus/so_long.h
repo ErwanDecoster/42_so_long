@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:54:58 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/03 17:47:33 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:40:28 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,13 @@ int		check_charactere(char *map);
 int		check_integrity(char *map);
 int		check_map(t_game *game, char *filename);
 
+// ------------------------------------------------------------ enemy_funct.c --
+
+int		enemy_can_be_place(int i, char *m);
+int		add_enemy(t_game *game);
+char	*move_enemy(t_game *game, int from, char state, char *map_cpy);
+int		change_enemys_pos(t_game *game);
+
 // ------------------------------------------------------------------- imgs.c --
 
 int		open_imgs(void *mlx, t_game *game);
@@ -88,13 +95,13 @@ int		close_img_wall(t_game *g);
 
 int		get_map_size(t_game *game, char *filename);
 int		get_map(t_game *game, char *file);
-int		add_enemy(t_game *game);
-int		move_enemy(t_game *game, int from, char state);
-int		change_enemys_pos(t_game *game, size_t pos);
 
 // ------------------------------------------------------------------- move.c --
 
 int		move_check(t_game *game, char direction);
+int		update_diplayed_move(t_game *game);
+int		move_player_set_datas(t_game *game, int from_pos, int x, int y);
+int		update_x_y(char direction, int i, int *x, int *y);
 int		move_player(t_game *game, int from_pos, char direction);
 
 // ----------------------------------------------------------------- render.c --

@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:24:53 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/03 17:48:43 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:37:55 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,77 +58,5 @@ int	get_map(t_game *game, char *file)
 		i++;
 	}
 	close(fd);
-	return (0);
-}
-
-int	enemy_can_be_place(int i, char *m)
-{
-	if (m[get_ind(i, m, 'l')] == '0' && m[get_ind(i, m, 'b')] == '0')
-		if (m[i] == '0' && m[get_ind(get_ind(i, m, 'l'), m, 'b')] == '0')
-			if (m[get_ind(i, m, 't')] != 'R' && \
-				m[get_ind(get_ind(i, m, 'l'), m, 't')] != 'R')
-					return (1);
-	return (0);
-}
-
-int	add_enemy(t_game *game)
-{
-	int	i;
-
-	i = -1;
-	while (game->map[++i])
-		if ((rand() % 5) < 1 && enemy_can_be_place(i, game->map))
-			game->map[i] = 'R';
-	return (0);
-}
-
-int	move_enemy(t_game *game, int from, char state)
-{
-	int	x;
-	int	y;
-	
-	find_x_y(*game, from, &x, &y);
-	put_image(*game, '0', x * 96, y * 96);
-	game->map[from] = '0';
-	if (state == 'R')
-	{
-		put_image(*game, 'R', x * 96, y * 96 + 96);
-		game->map[get_ind(from, game->map, 'b')] = 'r';
-		return (0);
-	}
-	if (state == 'r')
-	{
-		put_image(*game, 'R', x * 96 - 96, y * 96);
-		game->map[get_ind(from, game->map, 'l')] = 'l';
-		return (0);
-	}
-	if (state == 'l')
-	{
-		put_image(*game, 'R', x * 96, y * 96 - 96);
-		game->map[get_ind(from, game->map, 't')] = 'L';
-		return (0);
-	}
-	if (state == 'L')
-	{
-		put_image(*game, 'R', x * 96 + 96, y * 96);
-		game->map[get_ind(from, game->map, 'r')] = 'R';
-		return (0);
-	}
-	return (0);
-}
-
-int	change_enemys_pos(t_game *game, size_t pos)
-{
-	if (game->map[pos] == 'R' || game->map[pos] == 'r' || game->map[pos] == 'L' || game->map[pos] == 'l')
-	{
-		if ((rand() % 5) < 3 )
-		{
-			move_enemy(game, pos, game->map[pos]);
-			ft_printf("nb move :%d\n\n", game->move);
-			ft_printf("%s\n\n", game->map);
-		}
-	}
-	if (pos < ft_strlen(game->map))
-	change_enemys_pos(game, pos + 1);
 	return (0);
 }

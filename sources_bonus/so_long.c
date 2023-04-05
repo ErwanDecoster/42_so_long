@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:25:59 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/03 17:48:15 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:07:11 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	close_program(t_game *game)
 		free(game->map);
 		close_img(game);
 		close_img_wall(game);
-		mlx_destroy_display(game->mlx);
 		mlx_destroy_window(game->mlx, game->mlx_win);
+		mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
 	exit(0);
@@ -46,8 +46,6 @@ int	key_press(int keycode, t_game *game)
 		move_check(game, 'l');
 	if (keycode == 100 || keycode == 65363)
 		move_check(game, 'r');
-	if (keycode == 102)
-		change_enemys_pos(game, 0);
 	return (0);
 }
 
