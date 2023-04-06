@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 12:25:59 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/05 16:07:11 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:41:03 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,6 @@ int	main(int argc, char **argv)
 	add_enemy(&game);
 	fill_win(game);
 	check_event(&game);
+	mlx_loop_hook(game.mlx, loop_animations, &game);
 	mlx_loop(game.mlx);
 }

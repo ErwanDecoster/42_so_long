@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:52:10 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/11 17:29:41 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:18:20 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,13 @@ int	put_image(t_game game, char c, int x, int y)
 	if (c == 'E')
 		img = game.assets.exit;
 	if (c == 'R')
-		img = game.assets.enemy;
+		img = game.assets.enemy_0;
+	if (c == 'T')
+		img = game.assets.enemy_1;
+	if (c == 'Y')
+		img = game.assets.enemy_2;
+	if (c == 'U')
+		img = game.assets.enemy_3;
 	mlx_put_image_to_window(game.mlx, game.mlx_win, img, x, y);
 	return (0);
 }

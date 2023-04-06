@@ -19,6 +19,7 @@ FLAGS			= ${FLAGSE} -Wextra -Werror -Wall -I -g3
 MLXFLAGS		= -Imlx_linux -lXext -lX11 -lm -lz
 
 SRCS			=	so_long.c \
+					animation.c \
 					check.c \
 					check_solvability.c \
 					utils.c \

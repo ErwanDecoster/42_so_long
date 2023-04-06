@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:54:58 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/06 14:31:49 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:43:10 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # define ER_WALL "La carte doit être fermée par des murs sur chacun de ses côtés.\n"
 # define ER_RESOLVE "La carte ne peut pas être résolu.\n"
 # define WIN "Vous avez gagne bravo !\n"
-# define DEATH "Vous etes mort.\n"
+# define DEATH "Vous etes mort 💩.\n"
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -43,7 +43,10 @@ typedef struct s_assets
 	void	*chest;
 	void	*exit;
 	void	*player;
-	void	*enemy;
+	void	*enemy_0;
+	void	*enemy_1;
+	void	*enemy_2;
+	void	*enemy_3;
 	void	*wall_bl;
 	void	*wall_br;
 	void	*wall_tl;
@@ -65,8 +68,14 @@ typedef struct s_game {
 	int			move;
 	int			collect;
 	int			player_pos;
+	int			loop_state;
 	t_assets	assets;
 }				t_game;
+
+// -------------------------------------------------------------- animation.c --
+
+int		anime_enemy(t_game *game, int anim_state);
+int		loop_animations(t_game *game);
 
 // ------------------------------------------------------ check_solvability.c --
 
