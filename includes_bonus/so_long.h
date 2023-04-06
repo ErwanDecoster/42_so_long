@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:54:58 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/05 17:40:28 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:31:49 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define ER_MAPLEN "Chacune des lignes de la carte doivent faire la même longueur.\n"
 # define ER_WALL "La carte doit être fermée par des murs sur chacun de ses côtés.\n"
 # define ER_RESOLVE "La carte ne peut pas être résolu.\n"
+# define WIN "Vous avez gagne bravo !\n"
+# define DEATH "Vous etes mort.\n"
 
 # include <unistd.h>
 # include <stdlib.h>

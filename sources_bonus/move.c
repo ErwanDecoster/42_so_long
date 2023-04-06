@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:33:01 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/05 17:31:30 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:31:20 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	move_check(t_game *game, char direction)
 		game->map[temp_i] == 'E')
 		move_player(game, game->player_pos, direction);
 	if (game->map[temp_i] == 'E' && game->collect == 0)
-		return (close_program(game), 0);
+		return (ft_printf(WIN), close_program(game), 0);
 	if (game->map[temp_i] == 'O')
 		move_player(game, game->player_pos, direction);
 	game->player_pos = temp_i;

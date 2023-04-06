@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:24:53 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/05 17:37:48 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:30:45 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,13 @@ int	add_enemy(t_game *game)
 	return (0);
 }
 
+int	kill_player(t_game *game, int enemy_pos)
+{
+	if (enemy_pos == game->player_pos)
+		return (ft_printf(DEATH), close_program(game), 0);
+	return (0);
+}
+
 char	*move_enemy(t_game *game, int from, char state, char *map_cpy)
 {
 	int	x;
@@ -43,15 +50,19 @@ char	*move_enemy(t_game *game, int from, char state, char *map_cpy)
 	map_cpy[from] = '0';
 	if (state == 'R')
 		return (put_image(*game, 'R', x * 96, y * 96 + 96), \
+				kill_player(game, get_ind(from, game->map, 'b')), \
 				map_cpy[get_ind(from, game->map, 'b')] = 'r', map_cpy);
 	else if (state == 'r')
 		return (put_image(*game, 'R', x * 96 - 96, y * 96), \
+				kill_player(game, get_ind(from, game->map, 'l')), \
 				map_cpy[get_ind(from, game->map, 'l')] = 'l', map_cpy);
 	else if (state == 'l')
 		return (put_image(*game, 'R', x * 96, y * 96 - 96), \
+				kill_player(game, get_ind(from, game->map, 't')), \
 				map_cpy[get_ind(from, game->map, 't')] = 'L', map_cpy);
 	else if (state == 'L')
 		return (put_image(*game, 'R', x * 96 + 96, y * 96), \
+				kill_player(game, get_ind(from, game->map, 'r')), \
 				map_cpy[get_ind(from, game->map, 'r')] = 'R', map_cpy);
 	return (map_cpy);
 }
