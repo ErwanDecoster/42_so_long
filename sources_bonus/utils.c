@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 17:38:22 by edecoste          #+#    #+#             */
-/*   Updated: 2023/03/11 15:37:44 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 17:10:29 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ int	get_ind(int pos, char *map, char directions)
 	int	line_l;
 
 	line_l = line_len(map) + 1;
-	if (map[pos] == '\n')
+	if (pos > 0 && map[pos] == '\n')
 		return (-1);
 	if (directions == 't')
 		if (pos > line_l)
 			return (pos - line_l);
 	if (directions == 'b')
-		if (pos < line_l * nb_occurrence(map, '\n'))
+		if (pos > 0 && pos < (int)ft_strlen(map))
 			return (pos + line_l);
 	if (directions == 'l')
-		if (map[pos - 1] && map[pos - 1] != '\n')
+		if (pos - 1 > 0 && map[pos - 1] != '\n')
 			return (pos - 1);
 	if (directions == 'r')
 		if (map[pos + 1] && map[pos + 1] != '\n')

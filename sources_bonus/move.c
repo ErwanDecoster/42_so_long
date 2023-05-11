@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:33:01 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/06 14:31:20 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:28:17 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	move_check(t_game *game, char direction)
 		return (0);
 	if (game->map[temp_i] == 'R' || game->map[temp_i] == 'r' || \
 		game->map[temp_i] == 'L' || game->map[temp_i] == 'l')
-		return (close_program(game), 0);
+		return (ft_printf(DEATH), close_program(game), 0);
 	if (game->map[temp_i] == 'C')
 	{
 		game->collect--;
@@ -37,7 +37,7 @@ int	move_check(t_game *game, char direction)
 	if (game->map[temp_i] == 'O')
 		move_player(game, game->player_pos, direction);
 	game->player_pos = temp_i;
-	return (change_enemys_pos(game), game->move++, 0);
+	return (game->move++, 0);
 }
 
 int	update_diplayed_move(t_game *game)

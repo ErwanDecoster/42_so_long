@@ -6,7 +6,7 @@
 /*   By: edecoste <edecoste@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:24:53 by edecoste          #+#    #+#             */
-/*   Updated: 2023/04/06 15:43:18 by edecoste         ###   ########.fr       */
+/*   Updated: 2023/04/06 18:28:59 by edecoste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,13 @@ int	anime_enemy(t_game *game, int anim_state)
 int	loop_animations(t_game *game)
 {
 	game->loop_state++;
-	if (game->loop_state > 12000)
+	if (game->loop_state > 6000)
 		game->loop_state = 0;
-	anime_enemy(game, game->loop_state / 2000);
+	if (game->loop_state % 1000)
+	{
+		anime_enemy(game, game->loop_state / 1000);
+	}
+	if (game->loop_state % 6000 == 0)
+		change_enemys_pos(game);
 	return (0);
 }

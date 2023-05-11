@@ -13,12 +13,21 @@
 
 NAME			= so_long
 
-FLAGSE			= #-fsanitize=address -g3 
+FLAGSE			= -fsanitize=address -g3 
 FLAGS			= ${FLAGSE} -Wextra -Werror -Wall -I -g3
 
 MLXFLAGS		= -Imlx_linux -lXext -lX11 -lm -lz
 
 SRCS			=	so_long.c \
+					check.c \
+					check_solvability.c \
+					utils.c \
+					imgs.c \
+					maps_funct.c \
+					render.c \
+					move.c
+
+SRCS_BONUS		=	so_long.c \
 					animation.c \
 					check.c \
 					check_solvability.c \
@@ -36,7 +45,7 @@ DIR_LIBFT		= Libft/
 LIBFT			= $(addprefix $(DIR_LIBFT), libft.a)
 
 OBJS 			= ${SRCS:%.c=./build/%.o}
-OBJS_BONUS		= ${SRCS:%.c=./build_bonus/%.o}
+OBJS_BONUS		= ${SRCS_BONUS:%.c=./build_bonus/%.o}
 
 HEADER			= includes/so_long.h
 BONUS_HEADER	= includes_bonus/so_long.h
