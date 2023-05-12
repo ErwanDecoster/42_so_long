@@ -19,6 +19,10 @@ int	close_program(t_game *game)
 	if (game->game_state == 3)
 	{
 		free(game->map);
+		close_img(game);
+		close_img_wall(game);
+		if (game->mlx)
+			mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
 	if (game->game_state == 4)
@@ -31,7 +35,6 @@ int	close_program(t_game *game)
 			mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}
-	// free(game);
 	exit(0);
 	return (0);
 }

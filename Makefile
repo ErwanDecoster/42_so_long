@@ -13,8 +13,8 @@
 
 NAME			= so_long
 
-FLAGSE			= -fsanitize=address -g3 
-FLAGS			= ${FLAGSE} -Wextra -Werror -Wall -I -g3
+FLAGSE			= -fsanitize=address
+FLAGS			= -Wextra -Werror -Wall -I -g3 #${FLAGSE}
 
 MLXFLAGS		= -Imlx_linux -lXext -lX11 -lm -lz
 
