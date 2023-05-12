@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: edecoste <edecoste@student.4move_checkmove_checklyon.fr>      +#+  +:+       +#+         #
+#    By: edecoste <edecoste@student.lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 13:51:30 by edecoste          #+#    #+#              #
 #    Updated: 2023/04/03 17:11:28 by edecoste         ###   ########.fr        #
@@ -12,7 +12,7 @@
 
 
 NAME			= so_long
-
+NAME_B			= so_long_bonus
 FLAGSE			= -fsanitize=address
 FLAGS			= -Wextra -Werror -Wall -I -g3 #${FLAGSE}
 
@@ -69,8 +69,10 @@ ${MLX}:			FORCE
 ${LIBFT}:		FORCE
 				make -s -C ${DIR_LIBFT}
 
-bonus:			${OBJS_BONUS} ${LIBFT} ${MLX}
-				${CC} $^ ${FLAGS} ${MLXFLAGS} -o ${NAME}
+bonus:			$(NAME_B)
+
+$(NAME_B):			${OBJS_BONUS} ${LIBFT} ${MLX}
+				${CC} $^ ${FLAGS} ${MLXFLAGS} -o $(NAME_B)
 
 clean:
 				${RM} -r ./build
@@ -78,6 +80,7 @@ clean:
 
 fclean:			clean
 				${RM} ${NAME}
+				${RM} so_long_bonus
 				make -s -C ${DIR_MLX} clean
 				make -s -C ${DIR_LIBFT} clean
 
